@@ -74,29 +74,55 @@ export const headerButtonStyle = style({
   marginLeft: '5px'
 });
 
-export function branchDropdownButtonStyle(isLight: string) {
+export function branchDropdownButtonStyle(isLight: string, isOpen: boolean) {
   if (isLight === 'true' || isLight === undefined) {
-    return style({
-      backgroundImage: 'var(--jp-icon-arrow-down)',
-      backgroundSize: '100%',
-      backgroundRepeat: 'no-repeat',
-      backgroundPosition: 'center',
-      height: '18px',
-      width: '18px',
-      display: 'inline-block',
-      verticalAlign: 'middle'
-    });
+    if (isOpen) {
+      return style({
+        backgroundImage: 'var(--jp-icon-arrow-up)',
+        backgroundSize: '100%',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        height: '18px',
+        width: '18px',
+        display: 'inline-block',
+        verticalAlign: 'middle'
+      });
+    } else {
+      return style({
+        backgroundImage: 'var(--jp-icon-arrow-down)',
+        backgroundSize: '100%',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        height: '18px',
+        width: '18px',
+        display: 'inline-block',
+        verticalAlign: 'middle'
+      });
+    }
   } else {
-    return style({
-      backgroundImage: 'var(--jp-icon-arrow-down-white)',
-      backgroundSize: '100%',
-      backgroundRepeat: 'no-repeat',
-      backgroundPosition: 'center',
-      height: '18px',
-      width: '18px',
-      display: 'inline-block',
-      verticalAlign: 'middle'
-    });
+    if (isOpen) {
+      return style({
+        backgroundImage: 'var(--jp-icon-arrow-up-white)',
+        backgroundSize: '100%',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        height: '18px',
+        width: '18px',
+        display: 'inline-block',
+        verticalAlign: 'middle'
+      });
+    } else {
+      return style({
+        backgroundImage: 'var(--jp-icon-arrow-down-white)',
+        backgroundSize: '100%',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        height: '18px',
+        width: '18px',
+        display: 'inline-block',
+        verticalAlign: 'middle'
+      });
+    }
   }
 }
 

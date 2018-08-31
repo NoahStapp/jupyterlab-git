@@ -160,10 +160,16 @@ export class BranchHeader extends React.Component<
             className={
               this.props.disabled
                 ? classes(
-                    branchDropdownButtonStyle(this.props.currentTheme),
+                    branchDropdownButtonStyle(
+                      this.props.currentTheme,
+                      this.state.dropdownOpen
+                    ),
                     headerButtonDisabledStyle
                   )
-                : branchDropdownButtonStyle(this.props.currentTheme)
+                : branchDropdownButtonStyle(
+                    this.props.currentTheme,
+                    this.state.dropdownOpen
+                  )
             }
             title={'Change the current branch'}
             onClick={() => this.toggleSelect()}
